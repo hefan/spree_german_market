@@ -1,7 +1,7 @@
 SpreeGermanMarket
 =================
 
-Extends the spreecommerce for being more german market ready. Alters the address fields, the button captions and some translations. Adds a german zone, german tax categories/rates and a default german shipping category/method.
+Extends the spreecommerce for being more german market ready. Alters the address fields, the button captions and some translations. Adds a german zone, german tax categories/rates and a default german shipping method.
 
 
 Installation

@@ -22,6 +22,7 @@ module SpreeGermanMarket
         run_migrations = options[:auto_run_migrations] || ['', 'y', 'Y'].include?(ask 'Would you like to run the migrations now? [Y/n]')
         if run_migrations
           run 'bundle exec rake db:migrate'
+          SpreeGermanMarket::Engine.load_seed
         else
           puts 'Skipping rake db:migrate, don\'t forget to run it!'
         end
