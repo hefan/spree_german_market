@@ -31,6 +31,8 @@ bundle exec rails g spree_german_market:install
 Setup
 -----
 
+Add products with the appropriate shipping and tax categories to your shop and you're done.
+
 You may add the following to your application.rb:
 
 - Berlin as the time_zone of your application (config.time_zone = 'Berlin')
