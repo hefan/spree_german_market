@@ -22,9 +22,9 @@
     <%= form.label :street_number, Spree.t(:street_number) %><span class="required">*</span><br />
     <%= form.text_field :street_number, :class => 'required' %>
   </p>
-  <p class="field" id=<%="#{address_id}address2" %>>
-    <%= form.label :address2, Spree.t(:street_address_2) %><br />
-    <%= form.text_field :address2 %>
+  <p class="field" id=<%="#{address_id}zipcode" %>>
+    <%= form.label :zipcode, Spree.t(:zip) %><span class="required">*</span><br />
+    <%= form.text_field :zipcode, :class => 'required' %>
   </p>
   <p class="field" id=<%="#{address_id}city" %>>
     <%= form.label :city, Spree.t(:city) %><span class="required">*</span><br />
@@ -62,10 +62,6 @@
       </noscript>
   <% end %>
 
-  <p class="field" id=<%="#{address_id}zipcode" %>>
-    <%= form.label :zipcode, Spree.t(:zip) %><span class="required">*</span><br />
-    <%= form.text_field :zipcode, :class => 'required' %>
-  </p>
   <p class="field" id=<%="#{address_id}phone" %>>
     <%= form.label :phone, Spree.t(:phone) %><span class="required">*</span><br />
     <%= form.phone_field :phone, :class => 'required' %>
