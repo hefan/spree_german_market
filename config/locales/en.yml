@@ -2,7 +2,9 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  buy: "Buy"
+  buy_declaration: "By Clicking the 'Buy'-Button you accept our general terms and conditions and data protection regulations."
+
 
   spree:
     street_number: "Street Number"  

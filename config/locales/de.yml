@@ -2,7 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
-  hello: "Hallo Welt"
+  buy: "Jetzt kaufen"
+  buy_declaration: "Mit Betätigungs des 'Jetzt Kaufen'-Knopfes bestätigen Sie unsere Allgemeinen Geschäftsbedingungen (AGB) und Datenschutzbestimmungen."
 
   de:
     street_number: "Hausnr"
