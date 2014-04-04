@@ -5,6 +5,5 @@ en:
   buy: "Buy"
   buy_declaration: "By Clicking the 'Buy'-Button you accept our general terms and conditions and data protection regulations."
 
-
   spree:
     street_number: "Street Number"  
