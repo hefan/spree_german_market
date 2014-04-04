@@ -33,12 +33,13 @@ Setup
 
 You may add the following to your application.rb:
 
- - Berlin as the time_zone of your application (config.time_zone = 'Berlin')
- - 'de' as i18n default locale of your application (config.i18n.default_locale = :de)
+- Berlin as the time_zone of your application (config.time_zone = 'Berlin')
+- 'de' as i18n default locale of your application (config.i18n.default_locale = :de)
 
 Todo
 -----
 
+- add some spec tests
 
 Testing
 -------
