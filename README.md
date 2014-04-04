@@ -1,7 +1,15 @@
 SpreeGermanMarket
 =================
 
-Extends the spreecommerce for being more german market ready. Alters the address fields, the button captions and some translations. Adds a german zone, german tax categories/rates and a default german shipping method.
+Extends the spreecommerce for being more german market ready. Assumes a german country.
+
+- Alters the address fields
+- Change the final save and continue button caption 
+- Adds some declarations and translations. 
+- Adds a german zone, german tax categories/rates and a default flat german shipping method.
+- Remove germany from all other zones.
+- Set germany as default checkout zone and default country id.
+- Sets Euro (EUR) as default currency
 
 
 Installation
@@ -23,22 +31,13 @@ bundle exec rails g spree_german_market:install
 Setup
 -----
 
-You have to enter the following data in your payone merchant backend portal configuration:
+You may add the following to your application.rb:
 
-- Tick the "FinanceGate Frontend" checkbox.
-- Enter Success-URL: http://youshopdomain/payone_frontend/success?oid=__param__
-- Enter Cancel-URL: http://youshopdomain/payone_frontend/cancel
-- Enter Transaction-Status-URL: http://youshopdomain/payone_frontend/status
-
-Navigate to Spree Backend/Configuration/Payment Methods and add a new payment method with Provider "Spree::PaymentMethod::PayoneFrontend".
-
-Enter the Portal id, the sub account id and the secret key from your payone account. Supported modes are "test" and "live". The other options should be fine by default.
-
+ - Berlin as the time_zone of your application (config.time_zone = 'Berlin')
+ - 'de' as i18n default locale of your application (config.i18n.default_locale = :de)
 
 Todo
 -----
-
-- Add Transaction Logs
 
 
 Testing
