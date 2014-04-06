@@ -40,12 +40,6 @@ You may add the following to your application.rb:
 - 'de' as i18n default locale of your application (config.i18n.default_locale = :de)
 
 
-Todo
-----
-
-Add street number to ALL respective order overview screens
-
-
 Testing
 -------
 
