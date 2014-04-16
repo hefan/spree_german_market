@@ -21,6 +21,13 @@ Add spree_german_market to your Gemfile:
 gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.git' 
 ```
 
+For a specific version use the appropriate branch, for example
+
+```ruby
+gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.git', :branch => '2-2-stable'
+```
+
+
 Bundle your dependencies and run the installation generator:
 
 ```shell
