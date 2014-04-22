@@ -7,36 +7,50 @@ if germany.present?
     z.country_ids = country_ids
     z.save!
   end
-  zone = Spree::Zone.create(name: "Deutschland", description: "Deutschland", default_tax: true)
+  
+  zone = Spree::Zone.find_or_create_by_name("Deutschland")
+  zone.description = "Deutschland"
+  zone.default_tax = true
   zone.country_ids = [germany.id]
   zone.save!
 
+  tax_cat_1 = Spree::TaxCategory.find_or_create_by_name("Standard") 
+  tax_cat_1.description = "Standard Mehrwertsteuer Deutschland"
+  tax_cat_1.is_default = true
+  tax_cat_1.save!
 
-  tax_cat_1 = Spree::TaxCategory.create(name: "Standard", 
-                                           description: "Standard Mehrwertsteuer Deutschland", 
-                                           is_default: true)
+  tax_cat_2 = Spree::TaxCategory.find_or_create_by_name("Lebensmittel") 
+  tax_cat_2.description = "Lebensmittel Mehrwertsteuer Deutschland"
+  tax_cat_2.is_default = false
+  tax_cat_2.save!
 
-  tax_cat_2 = Spree::TaxCategory.create(name: "Lebensmittel ", 
-                                           description: "Lebensmittel Mehrwertsteuer Deutschland", 
-                                           is_default: false)
+  tax_rate_1 = Spree::TaxRate.find_or_create_by_name("inkl. 19% MwSt.")
+  tax_rate_1.amount = 0.19
+  tax_rate_1.zone = zone
+  tax_rate_1.tax_category = tax_cat_1
+  tax_rate_1.show_rate_in_label = true
+  tax_rate_1.included_in_price = true
+  tax_rate_1.calculator_type = "Spree::Calculator::DefaultTax"
+  tax_rate_1.save!
+
+  tax_rate_2 = Spree::TaxRate.find_or_create_by_name("inkl. 7% MwSt.")
+  tax_rate_2.amount = 0.07
+  tax_rate_2.zone = zone
+  tax_rate_2.tax_category = tax_cat_2
+  tax_rate_2.show_rate_in_label = true
+  tax_rate_2.included_in_price = true
+  tax_rate_2.calculator_type = "Spree::Calculator::DefaultTax"
+  tax_rate_2.save!
 
 
-  tax_rate_1 = Spree::TaxRate.create(name: "inkl. 19% MwSt.",
-                                     amount: 0.19, zone: zone, tax_category: tax_cat_1,
-                                     show_rate_in_label: true, included_in_price: true,
-                                     calculator_type: "Spree::Calculator::DefaultTax")
+  default_shipping_cat = Spree::ShippingCategory.find_or_create_by_name("Standard Deutschland")
 
-  tax_rate_2 = Spree::TaxRate.create(name: "inkl. 7% MwSt.",
-                                     amount: 0.07, zone: zone, tax_category: tax_cat_2,
-                                     show_rate_in_label: true, included_in_price: true,
-                                     calculator_type: "Spree::Calculator::DefaultTax")
-
-
-  default_shipping_cat = Spree::ShippingCategory.create(name: "Standard Deutschland")
-
-  shipping_method_1 = Spree::ShippingMethod.create(name: "Flat Deutschland", 
-                                                   zones:[zone], shipping_categories: [default_shipping_cat],
-                                                   calculator_type: "Spree::Calculator::Shipping::FlatRate")
+  shipping_method_1 = Spree::ShippingMethod.find_or_create_by_name("Flat Deutschland") 
+  shipping_method_1.zones = [zone]
+  shipping_method_1.shipping_categories = [default_shipping_cat]
+  shipping_method_1.calculator_type = "Spree::Calculator::Shipping::FlatRate"
 
 end
+
+
 
