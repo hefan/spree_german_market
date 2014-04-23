@@ -29,18 +29,13 @@
   </div>
 
   <div class="field <%= "#{type}-row" %>">
-    <%= f.label :address2, Spree.t(:street_address_2) %>
-    <%= f.text_field :address2, :class => 'fullwidth' %>
+    <%= f.label :zipcode, Spree.t(:zip) %>
+    <%= f.text_field :zipcode, :class => 'fullwidth' %>
   </div>
 
   <div class="field <%= "#{type}-row" %>">
     <%= f.label :city, Spree.t(:city) %>
     <%= f.text_field :city, :class => 'fullwidth' %>
-  </div>
-
-  <div class="field <%= "#{type}-row" %>">
-    <%= f.label :zipcode, Spree.t(:zip) %>
-    <%= f.text_field :zipcode, :class => 'fullwidth' %>
   </div>
 
   <div class="field <%= "#{type}-row" %>">
@@ -50,15 +45,17 @@
     </span>
   </div>
 
-  <div class="field <%= "#{type}-row" %>">
-    <%= f.label :state_id, Spree.t(:state) %>
-    <span id="<%= s_or_b %>state">
-      <%= f.text_field :state_name,
-            :style => "display: #{f.object.country.states.empty? ? 'block' : 'none' };",
-           :disabled => !f.object.country.states.empty?, :class => 'fullwidth state_name' %>
-      <%= f.collection_select :state_id, f.object.country.states.sort, :id, :name, {:include_blank => true}, {:class => 'select2 fullwidth', :style => "display: #{f.object.country.states.empty? ? 'none' : 'block' };", :disabled => f.object.country.states.empty?} %>
-    </span>
-  </div>
+  <% if Spree::Config[:address_requires_state] %>
+    <div class="field <%= "#{type}-row" %>">
+      <%= f.label :state_id, Spree.t(:state) %>
+      <span id="<%= s_or_b %>state">
+        <%= f.text_field :state_name,
+              :style => "display: #{f.object.country.states.empty? ? 'block' : 'none' };",
+             :disabled => !f.object.country.states.empty?, :class => 'fullwidth state_name' %>
+        <%= f.collection_select :state_id, f.object.country.states.sort, :id, :name, {:include_blank => true}, {:class => 'select2 fullwidth', :style => "display: #{f.object.country.states.empty? ? 'none' : 'block' };", :disabled => f.object.country.states.empty?} %>
+      </span>
+    </div>
+  <% end %>
 
   <div class="field <%= "#{type}-row" %>">
     <%= f.label :phone, Spree.t(:phone) %>
