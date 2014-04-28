@@ -9,7 +9,7 @@ Spree.config do |config|
   config.shipment_inc_vat = false
   config.currency = "EUR"
   config.display_currency = false
-  config.currency_symbol_position = "before"
+  config.currency_symbol_position = "after"
   config.currency_decimal_mark = ","
   config.currency_thousands_separator = "."
 end
