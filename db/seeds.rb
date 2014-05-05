@@ -53,8 +53,7 @@ if germany.present?
   shipping_method_1.deleted_at = false
   shipping_method_1.zone = zone
   shipping_method_1.shipping_category = default_shipping_cat
-#  shipping_method_1.calculator_type = "Spree::Calculator::Shipping::FlatRate"
-#  shipping_method_1.calculator = Spree::Calculator::FlatRate ?
+  shipping_method_1.calculator_type = "Spree::Calculator::FlatRate"
   shipping_method_1.save!
 
 end
