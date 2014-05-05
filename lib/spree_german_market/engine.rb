@@ -17,7 +17,7 @@ module SpreeGermanMarket
       end
     end
 
-    Spree::PermittedAttributes.address_attributes << :street_number
+#    Spree::PermittedAttributes.address_attributes << :street_number
 
     config.to_prepare &method(:activate).to_proc
   end
