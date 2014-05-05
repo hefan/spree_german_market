@@ -35,7 +35,7 @@ bundle
 bundle exec rails g spree_german_market:install
 ```
 
-add street number to permitted attributes in your _config/initializers/spree.rb_ (only required for 2.1 version):
+Add street number to permitted attributes in your _config/initializers/spree.rb_ (only required for 2.1 version):
 
 ```ruby
 Spree::PermittedAttributes.address_attributes << :street_number
