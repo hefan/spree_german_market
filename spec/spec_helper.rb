@@ -33,6 +33,8 @@ require 'spree/testing_support/url_helpers'
 require 'spree_german_market/factories'
 
 RSpec.configure do |config|
+  config.expose_current_running_example_as :example
+  config.infer_spec_type_from_file_location!
   config.include Spree::TestingSupport::ControllerRequests, :type => :controller
 
   config.include FactoryGirl::Syntax::Methods
