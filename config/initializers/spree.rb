@@ -6,7 +6,6 @@ Spree.config do |config|
   config.address_requires_state = false
   config.checkout_zone = "Deutschland"
 
-  config.shipment_inc_vat = false
   config.currency = "EUR"
   config.display_currency = false
   config.currency_symbol_position = "after"
