@@ -1,11 +1,11 @@
 SpreeGermanMarket
 =================
 
-Extends the spreecommerce for being more german market ready. Assumes a german country.
+Configure and extend spreecommerce for being more german market ready. Assumes a german country.
 
 - Alters the address fields
-- Change the final save and continue button caption 
-- Adds some declarations and translations. 
+- Change the final save and continue button caption
+- Adds some declarations and translations.
 - Adds a german zone, german tax categories/rates and a default flat german shipping method.
 - Remove germany from all other zones.
 - Set germany as default checkout zone and default country id.
@@ -18,7 +18,7 @@ Installation
 Add spree_german_market to your Gemfile:
 
 ```ruby
-gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.git' 
+gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.git'
 ```
 
 For a specific version use the appropriate branch, for example
@@ -65,5 +65,3 @@ Simply add this require statement to your spec_helper:
 ```ruby
 require 'spree_german_market/factories'
 ```
-
-

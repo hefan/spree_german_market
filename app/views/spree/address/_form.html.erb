@@ -1,3 +1,18 @@
+Skip to content
+ This repository
+Explore
+Gist
+Blog
+Help
+stefan hefan
+
+338  Watch
+  Star 5,699
+ Fork 2,647spree/spree
+ branch: 2-4-stable spree / frontend / app / views / spree / address / _form.html.erb
+Matthew FenelonMattFenelon on Mar 30 Allowed for client side validation of phone number and zip code to be…
+2 contributors Ryan BiggMatthew Fenelon
+76 lines (72 sloc)  3.505 kb RawBlameHistory
 <% address_id = address_type.chars.first %>
 <div class="inner" data-hook=<%="#{address_type}_inner" %>>
   <p class="field" id=<%="#{address_id}firstname" %>>
@@ -14,17 +29,13 @@
       <%= form.text_field :company %>
     </p>
   <% end %>
-  <p class="field" id="<%="#{address_id}address1" %>">
+  <p class="field" id=<%="#{address_id}address1" %>>
     <%= form.label :address1, Spree.t(:street_address) %><span class="required">*</span><br />
     <%= form.text_field :address1, :class => 'required' %>
   </p>
-  <p class="field" id="<%="#{address_id}street_number" %>">
-    <%= form.label :street_number, Spree.t(:street_number) %><span class="required">*</span><br />
-    <%= form.text_field :street_number, :class => 'required' %>
-  </p>
   <p class="field" id=<%="#{address_id}zipcode" %>>
-    <%= form.label :zipcode, Spree.t(:zip) %><span class="required">*</span><br />
-    <%= form.text_field :zipcode, :class => 'required' %>
+    <%= form.label :zipcode, Spree.t(:zip) %><% if address.require_zipcode? %><span class="required">*</span><br /><% end %>
+    <%= form.text_field :zipcode, :class => "#{'required' if address.require_zipcode?}" %>
   </p>
   <p class="field" id=<%="#{address_id}city" %>>
     <%= form.label :city, Spree.t(:city) %><span class="required">*</span><br />
@@ -63,8 +74,8 @@
   <% end %>
 
   <p class="field" id=<%="#{address_id}phone" %>>
-    <%= form.label :phone, Spree.t(:phone) %><span class="required">*</span><br />
-    <%= form.phone_field :phone, :class => 'required' %>
+    <%= form.label :phone, Spree.t(:phone) %><% if address.require_phone? %><span class="required">*</span><br /><% end %>
+    <%= form.phone_field :phone, :class => "#{'required' if address.require_phone?}" %>
   </p>
   <% if Spree::Config[:alternative_shipping_phone] %>
     <p class="field" id=<%="#{address_id}altphone" %>>
@@ -73,4 +84,5 @@
     </p>
   <% end %>
 </div>
-
+Status API Training Shop Blog About
+© 2014 GitHub, Inc. Terms Privacy Security Contact
