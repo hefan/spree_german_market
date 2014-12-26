@@ -49,9 +49,12 @@ You may add the following to your application.rb:
 - 'Berlin' as the time_zone of your application `config.time_zone = 'Berlin'`
 
 
+Convert products
+----------------
+
 If you want to move all existing Products
- - in the newly created shipping
- - in the newly create tax categories
+ - in the newly created shipping category
+ - in the newly created tax category
 and set all currencies to "EUR" (without altering the prices) use
 ```shell
 bundle exec rails g spree_german_market:convert_products
