@@ -24,7 +24,7 @@ gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.g
 For a specific version use the appropriate branch, for example
 
 ```ruby
-gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.git', :branch => '2-2-stable'
+gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.git', :branch => 'master'
 ```
 
 
@@ -47,6 +47,15 @@ You may add the following to your application.rb:
   - you have to add spree_i18n for that, see https://github.com/spree/spree_i18n
 
 - 'Berlin' as the time_zone of your application `config.time_zone = 'Berlin'`
+
+
+If you want to move all existing Products
+ - in the newly created shipping
+ - in the newly create tax categories
+and set all currencies to "EUR" (without altering the prices) use
+```shell
+bundle exec rails g spree_german_market:convert_products
+```
 
 
 Testing
