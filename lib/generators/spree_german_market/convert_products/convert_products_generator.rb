@@ -3,8 +3,8 @@ module SpreeGermanMarket
     class ConvertProductsGenerator < Rails::Generators::Base
 
       def run_migrations
-        default_shipping_cat = Spree::ShippingCategory.find_by(name: "Standard Deutschland")
-        default_tax_cat = Spree::TaxCategory.find_by(name: "Standard")
+        default_shipping_cat = Spree::ShippingCategory.find_by_name("Standard Deutschland")
+        default_tax_cat = Spree::TaxCategory.find_by_name("Standard")
 
         if default_shipping_cat.blank?
           puts "no default shipping category from spree_german_market ('Standard Deutschland') found, did you run spree_german_market:install ?"
