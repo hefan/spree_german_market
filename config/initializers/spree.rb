@@ -7,8 +7,4 @@ Spree.config do |config|
   config.checkout_zone = "Deutschland"
 
   config.currency = "EUR"
-  config.display_currency = false
-  config.currency_symbol_position = "after"
-  config.currency_decimal_mark = ","
-  config.currency_thousands_separator = "."
 end
