@@ -26,6 +26,11 @@ module SpreeGermanMarket
             p.save!
             puts "put #{p.name} in german shipping and tax categories"
           end
+          Spree::Order.where("state != 'complete'").each do |o|
+            o.currency = "EUR"
+            o.save!
+            puts "currency of order #{o.number} is now Euro"
+          end
         end
       end
 
