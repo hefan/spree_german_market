@@ -56,12 +56,11 @@ If you want to move all existing Products
  - in the newly created shipping category
  - in the newly created tax category
 
-and set all currencies to "EUR" (without altering the prices) use
+and set the currencies of all products and incompleted orders to "EUR" (without altering the prices) use
 
 ```shell
 bundle exec rails g spree_german_market:convert_products
 ```
-
 
 Testing
 -------
