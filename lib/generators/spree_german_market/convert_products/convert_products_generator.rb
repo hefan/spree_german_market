@@ -26,6 +26,10 @@ module SpreeGermanMarket
             p.save!
             puts "put #{p.name} in german shipping and tax categories"
           end
+          # if you try to add product with price in EUR to order in another currency, you will get
+          # undefined method `+' for nil:NilClass
+          # spree/core/app/models/spree/line_item.rb:113:in `options='
+          Spree::Order.where("state != 'complete'").update_all(currency: 'EUR')
         end
       end
 
