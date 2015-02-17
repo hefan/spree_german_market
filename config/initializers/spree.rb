@@ -7,4 +7,4 @@ Spree.config do |config|
   config.checkout_zone = "Deutschland"
 
   config.currency = "EUR"
-end
+end if Spree::Country.table_exists?
