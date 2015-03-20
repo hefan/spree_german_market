@@ -24,7 +24,7 @@ gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.g
 For a specific version use the appropriate branch, for example
 
 ```ruby
-gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.git', :branch => 'master'
+gem 'spree_german_market', :git => 'git://github.com/hefan/spree_german_market.git', :branch => '3-0-stable'
 ```
 
 
