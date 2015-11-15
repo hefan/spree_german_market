@@ -4,7 +4,7 @@ SpreeGermanMarket
 Configure and extend spreecommerce for being more german market ready. Assumes a german country.
 
 - Alters the address fields
-- Change the final save and continue button caption
+- Change the final save and continue button caption if there is no confirm state
 - Adds some declarations and translations.
 - Adds a german zone, german tax categories/rates and a default flat german shipping method.
 - Remove germany from all other zones.
