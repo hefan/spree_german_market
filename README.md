@@ -49,10 +49,6 @@ You may add the following to your application.rb:
 - 'Berlin' as the time_zone of your application `config.time_zone = 'Berlin'`
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2-4-stable
 Convert products
 ----------------
 
