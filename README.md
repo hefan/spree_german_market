@@ -3,8 +3,8 @@ SpreeGermanMarket
 
 Configure and extend spreecommerce for being more german market ready. Assumes a german country.
 
-- Alters the address fields
-- Change the final save and continue button caption if there is no confirm state
+- Alters the address fields in the checkout address
+- Checkout: Change the final save and continue button caption if there is no confirm state
 - Adds some declarations and translations.
 - Adds a german zone, german tax categories/rates and a default flat german shipping method.
 - Remove germany from all other zones.
@@ -53,8 +53,8 @@ Convert products
 ----------------
 
 If you want to move all existing Products
- - in the newly created shipping category
- - in the newly created tax category
+ - to the newly created shipping category
+ - to the newly created tax category
 
 and set the currencies of all products and incompleted orders to "EUR" (without altering the prices) use
 
