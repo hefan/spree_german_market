@@ -11,20 +11,20 @@ module SpreeGermanMarket
         elsif default_tax_cat.blank?
           puts "no default tax category from spree_german_market ('Standard') found, did you run spree_german_market:install ?"
         else
-          Spree::Price.all.each do |pr|
-            pr.currency = "EUR"
-            pr.save!
-          end
           Spree::Product.all.each do |p|
+            next if p.price.blank?
             p.tax_category = default_tax_cat
             p.shipping_category = default_shipping_cat
+            p.currency = "EUR"
             p.cost_currency = "EUR"
             p.variants.all.each do |v|
+              next if v.price.blank?
+              v.currency = "EUR"
               v.cost_currency = "EUR"
               v.save!
             end
             p.save!
-            puts "put #{p.name} in german shipping and tax categories"
+            puts "put #{p.name} price as euro and in german shipping and tax categories"
           end
           Spree::Order.where("state != 'complete'").each do |o|
             o.currency = "EUR"
